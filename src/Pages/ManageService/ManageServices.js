@@ -4,10 +4,10 @@ import React, { useState, useEffect } from 'react'
 const ManageServices = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        axios('http://localhost:5000/services').then(res => setServices(res.data))
+        axios('https://secret-plains-68733.herokuapp.com/services').then(res => setServices(res.data))
     }, [services]);
     const handleDelete = (id) => {
-        const url = `http://localhost:5000/services/${id}`;
+        const url = `https://secret-plains-68733.herokuapp.com/services/${id}`;
         axios.delete(url).then(res => {
             if (res.data.deletedCount) {
                 alert('successfully deleted');
